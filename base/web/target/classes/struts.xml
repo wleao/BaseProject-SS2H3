@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+ 
+	<package name="default" extends="struts-default">
+ 
+ 		<action name="ItemAction" class="itemAction">
+			<result type="redirect">listAllItems.action</result>
+		</action>
+		
+		<action name="listAllItems" method="listAll" class="itemAction">
+			<result name="success">WEB-INF/item/list.jsp</result>
+		</action>
+  
+		<action name="addItemForm" class="itemAction">
+			<result>WEB-INF/item/addForm.jsp</result>
+		</action>
+ 
+ 		<action name="addItem" method="add" class="itemAction">
+			<result type="redirect">listAllItems.action</result>
+		</action>
+		
+		<action name="deleteItem" method="delete" class="itemAction">
+			<result type="redirect">listAllItems.action</result>
+		</action>
+		
+		<action name="editItemForm" class="itemAction">
+			<result>WEB-INF/item/editForm.jsp</result>
+		</action>
+		
+		<action name="editItem" method="update" class="itemAction">
+			<result type="redirect">listAllItems.action</result>
+		</action>
+		
+		
+	</package>
+</struts>
